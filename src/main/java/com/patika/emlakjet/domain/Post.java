@@ -5,17 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 
 @Entity
+@Table(name = "post")
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Post {
 
     @Id
@@ -29,6 +27,10 @@ public class Post {
     private String updatedBy;
     private String text;
     private Category category;
+
+    public Post(){
+        this.createdAt = Date.from(Instant.now());
+    }
 
 
     public static enum Category {

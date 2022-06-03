@@ -1,6 +1,5 @@
 # Basic Post API
 
-
 ### Tech Stack<hr>
 - Spring Boot
 - Spring Web
